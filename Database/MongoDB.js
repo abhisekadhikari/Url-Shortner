@@ -7,10 +7,10 @@ const MongoDB = async () => {
       { useNewUrlParser: true }
     );
     if (isConnect) {
-      console.log("MongoDB Connected");
+      console.warn("MongoDB Connected");
     }
   } catch (error) {
-    console.log(error.message);
+    console.warn(error.message);
   }
 };
 
