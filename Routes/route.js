@@ -6,9 +6,6 @@ route.get("/", async (req, res) => {
   res.render("index", {
     allUrl,
   });
-  // res.send(
-  //   `<a href='http://localhost:3000/${shortUrl.shortedUrl}' target='_blank'>http://localhost:3000/${shortUrl.shortedUrl}</a>`
-  // );
 });
 
 route.post("/post", async (req, res) => {
@@ -31,10 +28,8 @@ route.post("/post", async (req, res) => {
         message: "There is an error while storing the data",
       });
     }
-    console.log(`http:localhost:3000/${shortedUrl}`);
     res.status(200).json({ status: true, message: "URL Sorted Successfully" });
   } catch (error) {
-    console.log(error.message);
     res.status(500).json({ status: false, message: "Internal Server Error" });
   }
 });
